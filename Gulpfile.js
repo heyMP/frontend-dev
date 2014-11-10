@@ -12,7 +12,7 @@ var prefix = require('gulp-autoprefixer');
 var hologram = require('gulp-hologram');
 
 gulp.task('sass', function() {
-  return gulp.src(paths.sass + '/**/*.scss')
+  return gulp.src(paths.sass + '/**/**/*.scss')
     .pipe(compass({
       config_file: './config.rb',
       css: paths.css,
@@ -27,10 +27,10 @@ gulp.task('sass', function() {
 gulp.task('hologram', function() {
   gulp.src('hologram_config.yml')
     .pipe(hologram({bundler:true}));
-})
+});
 
 gulp.task('watch', function() {
-  gulp.watch(paths.sass + '/**/*.scss', ['sass']);
+  gulp.watch(paths.sass + '/**/*.scss', ['sass', 'hologram']);
 });
 
 //////////////////////////////
