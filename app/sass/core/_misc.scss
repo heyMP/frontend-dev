@@ -1,0 +1,18 @@
+/**
+ * Misc
+ */
+
+.clearfix,
+%clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+@mixin margin-fixer() {
+  > *:first-child {
+    margin-top: 0;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}

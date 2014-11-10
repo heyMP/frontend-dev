@@ -9,10 +9,16 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var shell = require('gulp-shell');
 var prefix = require('gulp-autoprefixer');
+var plumber = require('gulp-plumber');
 var hologram = require('gulp-hologram');
 
 gulp.task('sass', function() {
   return gulp.src(paths.sass + '/**/**/*.scss')
+    .pipe(plumber({
+      errorHandler: function (error) {
+        console.log(error.message);
+        this.emit('end');
+    }}))
     .pipe(compass({
       config_file: './config.rb',
       css: paths.css,
