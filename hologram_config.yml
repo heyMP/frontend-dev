@@ -18,3 +18,8 @@ css_include:
 # List all js to include for the styleguide render examples (path from styleguide directory)
 js_include:
   - 'http://code.jquery.com/jquery-1.7.2.min.js'
+
+# Mark which category should be the index page
+# Alternatively, you may have an index.md in the documentation assets
+# folder instead of specifying this config.
+index: README
