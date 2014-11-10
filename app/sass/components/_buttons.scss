@@ -11,10 +11,13 @@ name: button
 category: basics
 ---
 ```html_example
-    <div class='button'>Hello</div>
+    <div class='button'>Button</div>
 ```
 ```html_example
-    <div class='button button--primary'>Hello</div>
+    <div class='button button--primary'>Button Primary</div>
+```
+```html_example
+    <div class='button button--secondary'>Button Secondary</div>
 ```
 */
 
@@ -29,6 +32,7 @@ category: basics
   text-decoration: none;
   outline: 0;
   transition: none;
+  border: 1px solid transparent;
 
   &:hover {
     background: #4d4d4d;
@@ -50,6 +54,11 @@ category: basics
 
 
 .button--primary {
+  @extend .button;
+  @include style-button(#4285f4, #ffffff);
+}
+
+.button--secondary {
   @extend .button;
   @include style-button(#4285f4, #ffffff);
 }
