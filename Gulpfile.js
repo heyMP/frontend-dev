@@ -21,12 +21,11 @@ gulp.task('sass', function() {
       time: true
     }))
     .pipe(prefix("last 2 versions", "> 1%"))
-    .pipe(gulp.dest(paths.css))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(gulp.dest(paths.css));
 });
 
 gulp.task('hologram', function() {
-  gulp.src('config.yml')
+  gulp.src('hologram_config.yml')
     .pipe(hologram({bundler:true}));
 })
 
@@ -54,5 +53,5 @@ gulp.task('browserSync', function () {
 //////////////////////////////
 // Server Tasks
 //////////////////////////////
-gulp.task('server', ['watch', 'browserSync']);
+gulp.task('server', ['watch', 'browserSync', 'hologram']);
 gulp.task('serve', ['server']);

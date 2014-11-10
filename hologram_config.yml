@@ -5,7 +5,7 @@
 source: ./app/sass
 
 # The directory that hologram will build to
-destination: ./docs
+destination: ./app/styleguide
 
 # Hologram theme
 documentation_assets: ./bower_components/Cortana
@@ -13,7 +13,7 @@ custom_markdown: ./bower_components/Cortana/CortanaMarkdownRenderer.rb
 
 # List all css to include for the styleguide render examples (path from styleguide directory)
 css_include:
-  - '../app/css/styles.css'
+  - '../css/styles.css'
 
 # List all js to include for the styleguide render examples (path from styleguide directory)
 js_include:
