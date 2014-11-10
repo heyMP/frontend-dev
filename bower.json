@@ -13,7 +13,7 @@
     "borealis": "~1.0.1"
   },
   "devDependencies": {
-    "north": "~0.2.0"
+    "north": "~0.2.0",
+    "Cortana": "~1.2.7"
   }
 }
-

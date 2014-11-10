@@ -8,6 +8,7 @@
     "gulp": "^3.6.0",
     "gulp-autoprefixer": "^1.0.1",
     "gulp-compass": "^2.0.1",
+    "gulp-hologram": "^1.2.0",
     "gulp-jshint": "^1.5.1",
     "gulp-shell": "^0.2.4",
     "jshint-stylish": "^0.1.5"

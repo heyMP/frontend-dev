@@ -9,6 +9,7 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var shell = require('gulp-shell');
 var prefix = require('gulp-autoprefixer');
+var hologram = require('gulp-hologram');
 
 gulp.task('sass', function() {
   return gulp.src(paths.sass + '/**/*.scss')
@@ -24,6 +25,11 @@ gulp.task('sass', function() {
     .pipe(gulp.dest(paths.assets))
     .pipe(browserSync.reload({stream:true}));
 });
+
+gulp.task('hologram', function() {
+  gulp.src('config.yml')
+    .pipe(hologram({bundler:true}));
+})
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass + '/**/*.scss', ['sass']);
