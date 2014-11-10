@@ -22,7 +22,6 @@ gulp.task('sass', function() {
     }))
     .pipe(prefix("last 2 versions", "> 1%"))
     .pipe(gulp.dest(paths.css))
-    .pipe(gulp.dest(paths.assets))
     .pipe(browserSync.reload({stream:true}));
 });
 
