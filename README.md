@@ -1,4 +1,5 @@
 # Front-end Dev
+My front end stack that changes day to day :)
 
 ## Installation
 
