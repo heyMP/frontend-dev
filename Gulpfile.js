@@ -39,6 +39,12 @@ gulp.task('watch', function() {
   gulp.watch(paths.sass + '/**/*.scss', ['sass', 'hologram']);
 });
 
+gulp.task('jslint', function () {
+    gulp.src([paths.js + '/*.js'])
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('jshint-stylish'));
+});
+
 //////////////////////////////
 // BrowserSync Task
 //////////////////////////////
@@ -59,5 +65,6 @@ gulp.task('browserSync', function () {
 //////////////////////////////
 // Server Tasks
 //////////////////////////////
+gulp.task('build', ['hologram', 'jslint']);
 gulp.task('server', ['watch', 'browserSync', 'hologram']);
 gulp.task('serve', ['server']);
