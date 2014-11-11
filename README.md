@@ -1,5 +1,5 @@
 # Front-end Dev
-My ever-evolving quest for the perfect front end stack.
+A current snapshot of my front-end stack.
 
 ## Installation
 
