@@ -1,4 +1,5 @@
 # Front-end Dev
+My ever-evolving quest for the perfect front end stack.
 
 ## Installation
 
