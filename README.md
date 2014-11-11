@@ -1,5 +1,5 @@
 # Front-end Dev
-A current snapshot of my front-end stack.
+My front end stack that changes day to day :)
 
 ## Installation
 
