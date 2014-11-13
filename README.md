@@ -7,6 +7,8 @@ My front end stack that changes day to day :)
 
 npm install -g bower
 
+npm install -g gulp-hologram
+
 gem install bundler
 
 ### Install the plugins
