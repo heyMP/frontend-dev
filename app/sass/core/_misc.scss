@@ -16,3 +16,14 @@
     margin-bottom: 0;
   }
 }
+
+@mixin owl($spacing: NULL) {
+  > * + * {
+    @if $spacing == NULL {
+      margin-top: 1em;
+    }
+    @else {
+      margin-top: $spacing;
+    }
+  }
+}
