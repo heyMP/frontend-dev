@@ -1,4 +1,4 @@
-/**
+efw/**
  * Misc
  */
 
@@ -26,4 +26,16 @@
       margin-top: $spacing;
     }
   }
+}
+
+%container--standard {
+  @extend %clearfix;
+  @include margin-fixer;
+  @include owl;
+}
+
+@mixin vertical-center {
+  position: relative;
+  height: 50%;
+  transform: translateY(-50%);
 }
