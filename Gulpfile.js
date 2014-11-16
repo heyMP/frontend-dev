@@ -46,7 +46,9 @@ gulp.task('js', function () {
         .pipe(jshint.reporter('jshint-stylish'))
         .pipe(shell([
           'browserify '+ paths.js + '/scripts.js > ' + paths.js + '/dist/bundle.js'
-        ]));
+        ], {
+          ignoreErrors: true
+        }));
 });
 
 //////////////////////////////
