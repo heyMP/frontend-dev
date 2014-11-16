@@ -41,14 +41,14 @@ gulp.task('watch', function() {
 });
 
 gulp.task('js', function () {
-    gulp.src([paths.js + '/*.js'])
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(shell([
-          'browserify '+ paths.js + '/scripts.js > ' + paths.js + '/dist/bundle.js'
-        ], {
-          ignoreErrors: true
-        }));
+  gulp.src([paths.js + '/*.js'])
+    .pipe(jshint('.jshintrc'))
+    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(shell([
+      'browserify '+ paths.js + '/scripts.js > ' + paths.js + '/dist/bundle.js'
+    ], {
+      ignoreErrors: true
+    }));
 });
 
 //////////////////////////////
