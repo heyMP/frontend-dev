@@ -1,5 +1,5 @@
 # Require any additional compass plugins here.
-require 'compass/import-once/activate'
+require 'compass'
 require 'breakpoint'
 require 'singularitygs'
 require 'toolkit'

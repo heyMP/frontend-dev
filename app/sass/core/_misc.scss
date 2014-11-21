@@ -1,4 +1,4 @@
-efw/**
+/**
  * Misc
  */
 
@@ -38,4 +38,10 @@ efw/**
   position: relative;
   height: 50%;
   transform: translateY(-50%);
+}
+
+@mixin container {
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
 }
