@@ -2,6 +2,7 @@
 require 'compass'
 require 'breakpoint'
 require 'singularitygs'
+require 'susy'
 require 'toolkit'
 require 'modular-scale'
 require 'color-schemer'

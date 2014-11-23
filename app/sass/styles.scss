@@ -1,6 +1,6 @@
 @import "compass";
 @import "breakpoint";
-@import "singularitygs";
+@import "susy";
 @import "toolkit";
 @import "modular-scale";
 @import "color-schemer";
@@ -17,6 +17,7 @@
 // Layouts
 @import "layouts/body";
 @import "layouts/main";
+@import "layouts/footer";
 
 // Components
 @import "components/buttons";
