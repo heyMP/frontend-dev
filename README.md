@@ -11,6 +11,11 @@ npm install -g gulp-hologram
 
 gem install bundler
 
+### Clone the repo
+git clone git@github.com:heyMP/frontend-dev.git
+
+cd frontend-dev
+
 ### Install the plugins
 npm install
 
