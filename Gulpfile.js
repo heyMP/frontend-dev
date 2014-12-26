@@ -37,7 +37,7 @@ gulp.task('hologram', function() {
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass + '/**/*.scss', ['sass', 'hologram']);
-  gulp.watch(paths.js + '/scripts.js', ['js']);
+  gulp.watch(paths.js + '/*.js', ['js']);
 });
 
 gulp.task('js', function () {
