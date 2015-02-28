@@ -3,4 +3,3 @@ bower_components/
 node_modules/
 .vendor/bundle
 Gemfile.lock
-app/css/

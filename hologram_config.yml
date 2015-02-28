@@ -2,10 +2,10 @@
 # All paths should be relative to there
 
 # The directory containing the source files to parse recursively
-source: ./app/sass
+source: ./sass
 
 # The directory that hologram will build to
-destination: ./app/styleguide
+destination: ./styleguide
 
 # Hologram theme
 documentation_assets: ./bower_components/Cortana

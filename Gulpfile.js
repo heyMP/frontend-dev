@@ -63,7 +63,7 @@ gulp.task('browserSync', function () {
     paths.html + '/**/*.html',
   ], {
     server: {
-      baseDir: "app/"
+      baseDir: "./"
     }
   });
 });
