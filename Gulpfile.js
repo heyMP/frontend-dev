@@ -14,6 +14,7 @@ var hologram = require('gulp-hologram');
 var mainBowerFiles = require('main-bower-files');
 var filter = require('gulp-filter');
 var concat = require('gulp-concat');
+var svgSprite = require('gulp-svg-sprite');
 
 var filterByExtension = function(extension){
     return filter(function(file){
@@ -83,6 +84,26 @@ gulp.task('bowerdependancies', function(){
     .pipe(gulp.dest('./css/dist/'));
 });
 
+gulp.task('svg', function () {
+  var config = {
+    shape : {
+      dimension : {
+          maxWidth : 32,
+          maxHeight : 32
+      },
+      spacing : {
+          padding : 10
+      },
+    },
+    mode : {
+      symbol : true
+    }
+  };
+  gulp.src('svg/*.svg')
+    .pipe(svgSprite(config))
+    .pipe(gulp.dest('svg/dist'));
+});
+
 //////////////////////////////
 // BrowserSync Task
 //////////////////////////////
@@ -103,6 +124,6 @@ gulp.task('browserSync', function () {
 //////////////////////////////
 // Server Tasks
 //////////////////////////////
-gulp.task('build', ['hologram', 'js', 'bowerdependancies']);
+gulp.task('build', ['hologram', 'js', 'svg', 'bowerdependancies']);
 gulp.task('server', ['watch', 'browserSync', 'hologram', 'sass']);
 gulp.task('serve', ['server']);
