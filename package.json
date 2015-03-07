@@ -9,11 +9,14 @@
     "gulp": "^3.6.0",
     "gulp-autoprefixer": "^1.0.1",
     "gulp-compass": "^2.0.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-filter": "^2.0.2",
     "gulp-hologram": "^1.2.0",
     "gulp-jshint": "^1.5.1",
     "gulp-plumber": "^0.6.6",
     "gulp-shell": "^0.2.4",
-    "jshint-stylish": "^0.1.5"
+    "jshint-stylish": "^0.1.5",
+    "main-bower-files": "^2.5.0"
   },
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"

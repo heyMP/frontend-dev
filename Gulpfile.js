@@ -11,6 +11,15 @@ var shell = require('gulp-shell');
 var prefix = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');
 var hologram = require('gulp-hologram');
+var mainBowerFiles = require('main-bower-files');
+var filter = require('gulp-filter');
+var concat = require('gulp-concat');
+
+var filterByExtension = function(extension){
+    return filter(function(file){
+        return file.path.match(new RegExp('.' + extension + '$'));
+    });
+};
 
 gulp.task('sass', function() {
   return gulp.src(paths.sass + '/**/**/*.scss')
@@ -41,7 +50,9 @@ gulp.task('watch', function() {
 });
 
 gulp.task('js', function () {
-  gulp.src([paths.js + '/*.js'])
+  var jsFiles = [paths.js + '/*.js'];
+
+  gulp.src(jsFiles)
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(shell([
@@ -49,6 +60,27 @@ gulp.task('js', function () {
     ], {
       ignoreErrors: true
     }));
+});
+
+// Consolidate all of our bower dependancies into single js and css files.
+gulp.task('bowerdependancies', function(){
+  var mainFiles = mainBowerFiles();
+
+  if(!mainFiles.length){
+    // No main files found. Skipping....
+    return;
+  }
+
+  var jsFilter = filterByExtension('js');
+
+  return gulp.src(mainFiles)
+    .pipe(jsFilter)
+    .pipe(concat('third-party.js'))
+    .pipe(gulp.dest('./js/dist/'))
+    .pipe(jsFilter.restore())
+    .pipe(filterByExtension('css'))
+    .pipe(concat('third-party.css'))
+    .pipe(gulp.dest('./css/dist/'));
 });
 
 //////////////////////////////
@@ -71,6 +103,6 @@ gulp.task('browserSync', function () {
 //////////////////////////////
 // Server Tasks
 //////////////////////////////
-gulp.task('build', ['hologram', 'js']);
+gulp.task('build', ['hologram', 'js', 'bowerdependancies']);
 gulp.task('server', ['watch', 'browserSync', 'hologram', 'sass']);
 gulp.task('serve', ['server']);
