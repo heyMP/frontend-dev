@@ -9,6 +9,8 @@ Here is a demo of the installation and a rundown of features. https://www.youtub
 
 npm install -g bower
 
+npm install -g gulp
+
 npm install -g gulp-hologram
 
 gem install bundler
