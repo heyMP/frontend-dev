@@ -13,11 +13,13 @@ custom_markdown: ./bower_components/Cortana/CortanaMarkdownRenderer.rb
 
 # List all css to include for the styleguide render examples (path from styleguide directory)
 css_include:
+  - '../css/dist/third-party.css'
   - '../css/styles.css'
 
 # List all js to include for the styleguide render examples (path from styleguide directory)
 js_include:
   - 'http://code.jquery.com/jquery-1.7.2.min.js'
+  - '../js/dist/third-party.js'
   - '../js/dist/bundle.js'
 
 # Mark which category should be the index page
