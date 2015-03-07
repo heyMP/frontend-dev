@@ -11,6 +11,7 @@ var shell = require('gulp-shell');
 var prefix = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');
 var hologram = require('gulp-hologram');
+var svgSprite = require('gulp-svg-sprite');
 
 gulp.task('sass', function() {
   return gulp.src(paths.sass + '/**/**/*.scss')
@@ -51,6 +52,26 @@ gulp.task('js', function () {
     }));
 });
 
+gulp.task('svg', function () {
+  var config = {
+    shape : {
+      dimension : {
+          maxWidth : 32,
+          maxHeight : 32
+      },
+      spacing : {
+          padding : 10
+      },
+    },
+    mode : {
+      symbol : true
+    }
+  };
+  gulp.src('svg/*.svg')
+    .pipe(svgSprite(config))
+    .pipe(gulp.dest('svg/dist'));
+});
+
 //////////////////////////////
 // BrowserSync Task
 //////////////////////////////
@@ -71,6 +92,6 @@ gulp.task('browserSync', function () {
 //////////////////////////////
 // Server Tasks
 //////////////////////////////
-gulp.task('build', ['hologram', 'js']);
+gulp.task('build', ['hologram', 'js', 'svg']);
 gulp.task('server', ['watch', 'browserSync', 'hologram', 'sass']);
 gulp.task('serve', ['server']);
