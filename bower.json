@@ -20,6 +20,9 @@
   "overrides": {
     "jquery": {
       "ignore": "true"
+    },
+    "svg4everybody": {
+      "ignore": "true"
     }
   }
 }
