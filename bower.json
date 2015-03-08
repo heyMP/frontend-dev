@@ -16,5 +16,10 @@
   "devDependencies": {
     "north": "~0.2.0",
     "Cortana": "~1.2.7"
+  },
+  "overrides": {
+    "jquery": {
+      "ignore": "true"
+    }
   }
 }
