@@ -7,30 +7,30 @@ Here is a demo of the installation and a rundown of features. https://www.youtub
 
 ### Install the necessary package managers
 
-``npm install -g bower``
+``$ npm install -g bower``
 
-``npm install -g gulp``
+``$ npm install -g gulp``
 
-``npm install -g gulp-hologram``
+``$ npm install -g gulp-hologram``
 
-``gem install bundler``
+``$ gem install bundler``
 
 ### Clone the repo
 
-``git clone git@github.com:heyMP/frontend-dev.git``
+``$ git clone git@github.com:heyMP/frontend-dev.git``
 
-``cd frontend-dev``
+``$ cd frontend-dev``
 
 ### Install the plugins
 
-``npm install``
+``$ npm install``
 
-``bower install``
+``$ bower install``
 
-``bundle install``
+``$ bundle install``
 
 ### Run Gulp Serve
-``gulp serve``
+``$ gulp serve``
 
 ## Bower Dependencies
 
