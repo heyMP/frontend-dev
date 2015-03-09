@@ -18,7 +18,7 @@ css_include:
 
 # List all js to include for the styleguide render examples (path from styleguide directory)
 js_include:
-  - 'http://code.jquery.com/jquery-1.7.2.min.js'
+  - 'http://code.jquery.com/jquery-1.9.1.min.js'
   - '../js/dist/third-party.js'
   - '../js/dist/bundle.js'
 
