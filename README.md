@@ -21,7 +21,7 @@ Here is a demo of the installation and a rundown of features. https://www.youtub
 
 ``$ cd frontend-dev``
 
-### Install the plugins
+### Install the dependencies
 
 ``$ npm install``
 
