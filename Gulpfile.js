@@ -15,6 +15,7 @@ var mainBowerFiles = require('main-bower-files');
 var filter = require('gulp-filter');
 var concat = require('gulp-concat');
 var svgSprite = require('gulp-svg-sprite');
+var uglify = require('gulp-uglify');
 
 var filterByExtension = function(extension){
     return filter(function(file){
@@ -76,6 +77,7 @@ gulp.task('bowerdependancies', function(){
 
   return gulp.src(mainFiles)
     .pipe(jsFilter)
+    .pipe(uglify())
     .pipe(concat('third-party.js'))
     .pipe(gulp.dest('./js/dist/'))
     .pipe(jsFilter.restore())
