@@ -129,5 +129,5 @@ gulp.task('browserSync', function () {
 // Server Tasks
 //////////////////////////////
 gulp.task('build', ['hologram', 'js', 'svg', 'bowerdependancies']);
-gulp.task('server', ['watch', 'browserSync', 'hologram', 'sass']);
+gulp.task('server', ['watch', 'browserSync', 'hologram', 'sass', 'bowerdependancies', 'svg']);
 gulp.task('serve', ['server']);
