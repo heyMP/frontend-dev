@@ -34,7 +34,7 @@ gulp serve
 
 Bower makes is extremely easy to add new third-party libraries to your project.  Front-end dev makes that process even easier by automatically pulling those javascript and css files from bower into your project.
 
-### Adding Bootstrap through Bower
+### Example: Adding Bootstrap through Bower
 
 The first step is to run:
 
