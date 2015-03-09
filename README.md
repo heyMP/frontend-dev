@@ -1,5 +1,5 @@
 # Front-end Dev
-My front end stack that changes day to day :)
+My front-end stack that changes day to day :)
 
 Here is a demo of the installation and a rundown of features. https://www.youtube.com/watch?v=nNmILmypXyU
 
@@ -7,32 +7,34 @@ Here is a demo of the installation and a rundown of features. https://www.youtub
 
 ### Install the necessary package managers
 
-npm install -g bower
+``npm install -g bower``
 
-npm install -g gulp
+``npm install -g gulp``
 
-npm install -g gulp-hologram
+``npm install -g gulp-hologram``
 
-gem install bundler
+``gem install bundler``
 
 ### Clone the repo
-git clone git@github.com:heyMP/frontend-dev.git
 
-cd frontend-dev
+``git clone git@github.com:heyMP/frontend-dev.git``
+
+``cd frontend-dev``
 
 ### Install the plugins
-npm install
 
-bower install
+``npm install``
 
-bundle install
+``bower install``
+
+``bundle install``
 
 ### Run Gulp Serve
-gulp serve
+``gulp serve``
 
 ## Bower Dependencies
 
-Bower makes is extremely easy to add new third-party libraries to your project.  Front-end dev makes that process even easier by automatically pulling those javascript and css files from bower into your project.
+Bower makes is extremely easy to add new third-party libraries to your project.  Front-end dev makes that process even easier by automatically pulling those javascript and css files from bower into your project via gulp.
 
 ### Example: Adding Bootstrap through Bower
 
@@ -44,7 +46,7 @@ Notice the ``--save`` flag.  Not only does this add Bootstrap to the list of you
 project dependencies, it also lets Front-end Dev know to automatically pull any
 javascript or css resources into our existing project.
 
-Now run
+Now run:
 
 ```$ gulp build```
 
@@ -60,7 +62,7 @@ you want to be pulled into your project.
 Edit the 'bower.json' file. You will see an option in the json array for 'overrides'.
 here is where you have a few options.
 
-#### Specify a File
+#### Specify a file
 
 ```
   "overrides": {
@@ -70,7 +72,7 @@ here is where you have a few options.
   }
 ```
 
-#### Secify multiple files
+#### Specify multiple files
 
 ```
   "overrides": {
