@@ -22,7 +22,7 @@
       "ignore": "true"
     },
     "svg4everybody": {
-      "ignore": "true"
+      "main": "svg4everybody.min.js"
     }
   }
 }
