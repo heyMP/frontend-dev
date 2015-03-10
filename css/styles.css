@@ -227,11 +227,6 @@ th {
   box-sizing: border-box;
 }
 
-* {
-  position: relative;
-  z-index: 10;
-}
-
 /**
  * Misc
  */
@@ -413,17 +408,24 @@ category: Components - Slickheader
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+  z-index: 10;
 }
 
 .slickheader__title {
   color: white;
   margin-bottom: 0;
   text-shadow: 1px 1px 5px #000;
+  position: relative;
+  z-index: 10;
 }
 
 .slickheader__subtitle {
   color: white;
   text-shadow: 1px 1px 5px #000;
+  position: relative;
+  z-index: 10;
+  line-height: 120%;
 }
 
 .slickheader__imgcontainer {

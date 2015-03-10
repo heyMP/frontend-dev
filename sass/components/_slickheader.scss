@@ -31,17 +31,24 @@ category: Components - Slickheader
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  z-index: 10;
 }
 
 .slickheader__title {
   color: white;
   margin-bottom: 0;
   text-shadow: 1px 1px 5px #000;
+  position: relative;
+  z-index: 10;
 }
 
 .slickheader__subtitle {
   color: white;
   text-shadow: 1px 1px 5px #000;
+  position: relative;
+  z-index: 10;
+  line-height: 120%;
 }
 
 .slickheader__imgcontainer {
