@@ -38,7 +38,7 @@ gulp.task('sass', function() {
       bundle_exec: true,
       time: true
     }))
-    .pipe(prefix("last 2 versions", "> 1%"))
+    .pipe(prefix())
     .pipe(gulp.dest(paths.css));
 });
 

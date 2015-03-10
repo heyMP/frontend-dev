@@ -230,10 +230,12 @@ th {
 /**
  * Misc
  */
-.clearfix,
-.container {
-  overflow: auto;
-  zoom: 1;
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
 }
 
 /**
@@ -255,6 +257,13 @@ th {
   background-origin: content-box, border-box;
   background-clip: content-box, border-box;
   background-position: left top;
+}
+.container:before, .container:after {
+  content: " ";
+  display: table;
+}
+.container:after {
+  clear: both;
 }
 
 body {
@@ -369,3 +378,105 @@ category: Components - Alerts
 /**
  * Nav
  */
+.nav__sitename {
+  width: 48.57143%;
+  float: left;
+  margin-right: 2.85714%;
+}
+
+.nav__menu {
+  width: 48.57143%;
+  float: right;
+  margin-right: 0;
+  float: right;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+.nav__menu li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/**
+*
+* Slick Header
+*
+**/
+/*doc
+---
+title: Slick Header
+name: slickheader
+category: Components - Slickheader
+---
+```html_example
+  <div class="slickheader">
+    <h1 class="slickheader__title">Let's get coding</h1>
+    <div class="slickheader__subtitle">this is when it gets fun...</div>
+    <div class="slickheader__imgcontainer">
+      <img class="slickheader__img" src="http://i.telegraph.co.uk/multimedia/archive/02850/buzzBB5PW3_2850210b.jpg">
+    </div>
+  </div>
+```
+*/
+.slickheader {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  overflow: hidden;
+  display: block;
+  height: 30vw;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+.slickheader__title {
+  color: white;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 5px #000;
+  position: relative;
+  z-index: 10;
+}
+
+.slickheader__subtitle {
+  color: white;
+  text-shadow: 1px 1px 5px #000;
+  position: relative;
+  z-index: 10;
+  line-height: 120%;
+}
+
+.slickheader__imgcontainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.slickheader__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-position: 50% 30%;
+}
+@media (min-width: 800px) {
+  .slickheader__img {
+    object-position: 50% 0%;
+  }
+}
