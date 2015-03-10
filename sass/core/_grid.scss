@@ -17,5 +17,4 @@ $susy: (
   @include container;
   @include pad(gutter());
   @include show-grid();
-  @extend %clearfix;
 }

@@ -1,1 +1,6 @@
 @include border-box-sizing;
+
+* {
+  position: relative;
+  z-index: 10;
+}
