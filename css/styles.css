@@ -230,9 +230,12 @@ th {
 /**
  * Misc
  */
-.clearfix {
-  overflow: auto;
-  zoom: 1;
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
 }
 
 /**
@@ -254,6 +257,13 @@ th {
   background-origin: content-box, border-box;
   background-clip: content-box, border-box;
   background-position: left top;
+}
+.container:before, .container:after {
+  content: " ";
+  display: table;
+}
+.container:after {
+  clear: both;
 }
 
 body {
@@ -368,6 +378,27 @@ category: Components - Alerts
 /**
  * Nav
  */
+.nav__sitename {
+  width: 48.57143%;
+  float: left;
+  margin-right: 2.85714%;
+}
+
+.nav__menu {
+  width: 48.57143%;
+  float: right;
+  margin-right: 0;
+  float: right;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+.nav__menu li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 /**
 *
 * Slick Header
