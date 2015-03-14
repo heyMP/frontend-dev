@@ -14,7 +14,7 @@ var hologram = require('gulp-hologram');
 var mainBowerFiles = require('main-bower-files');
 var filter = require('gulp-filter');
 var concat = require('gulp-concat');
-var svgSprite = require('gulp-svg-sprite');
+var svgSprite = require('gulp-svg-sprites');
 var uglify = require('gulp-uglify');
 var cssmin = require('gulp-minify-css');
 
@@ -89,23 +89,9 @@ gulp.task('bowerdependancies', function(){
 });
 
 gulp.task('svg', function () {
-  var config = {
-    shape : {
-      dimension : {
-          maxWidth : 32,
-          maxHeight : 32
-      },
-      spacing : {
-          padding : 10
-      },
-    },
-    mode : {
-      symbol : true
-    }
-  };
-  gulp.src('svg/*.svg')
-    .pipe(svgSprite(config))
-    .pipe(gulp.dest('svg/dist'));
+  return gulp.src('svg/*.svg')
+    .pipe(svgSprite({mode: "defs"}))
+    .pipe(gulp.dest("svg/dist"));
 });
 
 //////////////////////////////
