@@ -17,6 +17,7 @@ var concat = require('gulp-concat');
 var svgSprite = require('gulp-svg-sprites');
 var uglify = require('gulp-uglify');
 var cssmin = require('gulp-minify-css');
+var svgmin = require('gulp-svgmin');
 
 var filterByExtension = function(extension){
     return filter(function(file){
@@ -91,6 +92,7 @@ gulp.task('bowerdependancies', function(){
 gulp.task('svg', function () {
   return gulp.src('svg/*.svg')
     .pipe(svgSprite({mode: "defs"}))
+    .pipe(svgmin())
     .pipe(gulp.dest("svg/dist"));
 });
 
