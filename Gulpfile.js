@@ -14,10 +14,9 @@ var hologram = require('gulp-hologram');
 var mainBowerFiles = require('main-bower-files');
 var filter = require('gulp-filter');
 var concat = require('gulp-concat');
-var svgSprite = require('gulp-svg-sprites');
+var svgSprite = require('gulp-svg-sprite');
 var uglify = require('gulp-uglify');
 var cssmin = require('gulp-minify-css');
-var svgmin = require('gulp-svgmin');
 
 var filterByExtension = function(extension){
     return filter(function(file){
@@ -90,9 +89,21 @@ gulp.task('bowerdependancies', function(){
 });
 
 gulp.task('svg', function () {
+  // More complex configuration example
+  var config = {
+    shape : {
+      dimension : { // Set maximum dimensions
+        maxWidth : 32,
+        maxHeight : 32
+      }
+    },
+    mode : {
+      symbol : true // Activate the «symbol» mode
+    }
+  };
+
   return gulp.src('svg/*.svg')
-    .pipe(svgSprite({mode: "defs"}))
-    .pipe(svgmin())
+    .pipe(svgSprite(config))
     .pipe(gulp.dest("svg/dist"));
 });
 
