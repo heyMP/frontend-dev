@@ -108,9 +108,9 @@ gulp.task('svg', function () {
 });
 
 //////////////////////////////
-// BrowserSync Task
+// BrowserSync Tasks
 //////////////////////////////
-gulp.task('browserSync', function () {
+gulp.task('browserSyncServer', function () {
   browserSync.init([
     paths.css +  '/**/*.css',
     paths.js + '/**/*.js',
@@ -124,9 +124,19 @@ gulp.task('browserSync', function () {
   });
 });
 
+gulp.task('browserSync', function () {
+  browserSync.init([
+    paths.css +  '/**/*.css',
+    paths.js + '/**/*.js',
+    paths.img + '/**/*',
+    paths.fonts + '/**/*',
+    paths.html + '/**/*.html',
+  ]);
+});
+
 //////////////////////////////
 // Server Tasks
 //////////////////////////////
 gulp.task('build', ['hologram', 'js', 'svg', 'bowerdependancies']);
-gulp.task('server', ['watch', 'browserSync', 'hologram', 'sass', 'bowerdependancies', 'svg']);
-gulp.task('serve', ['server']);
+gulp.task('server', ['watch', 'browserSyncServer', 'hologram', 'sass', 'bowerdependancies', 'svg']);
+gulp.task('default', ['watch', 'browserSync', 'hologram', 'sass', 'bowerdependancies', 'svg']);
