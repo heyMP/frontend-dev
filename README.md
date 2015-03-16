@@ -29,8 +29,12 @@ Here is a demo of the installation and a rundown of features. https://www.youtub
 
 ``$ bundle install``
 
-### Run Gulp Serve
-``$ gulp serve``
+### Run Gulp Server
+``$ gulp server``
+
+If you are using this stack on a server rendered website then run gulp without its built in server:
+
+``$ gulp``
 
 ## Bower Dependencies
 
