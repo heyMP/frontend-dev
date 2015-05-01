@@ -9,13 +9,13 @@
     "tests"
   ],
   "dependencies": {
-    "eq.js": "~1.4.1",
-    "borealis": "~1.0.1",
+    "eq.js": "~1.6.0",
+    "borealis": "~1.1.0",
     "svg4everybody": "~1.0.0",
     "object-fit": "~0.4.1"
   },
   "devDependencies": {
-    "north": "~0.2.0",
+    "north": "~0.4.0",
     "Cortana": "~1.2.7"
   },
   "overrides": {
