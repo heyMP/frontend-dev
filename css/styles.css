@@ -448,6 +448,15 @@ category: Components - Slickheader
     </div>
   </div>
 ```
+```html_example
+  <div class="slickheader slickheader--x-large">
+    <h1 class="slickheader__title">Let's get coding</h1>
+    <div class="slickheader__subtitle">this is when it gets fun...</div>
+    <div class="slickheader__imgcontainer">
+      <img class="slickheader__img" src="http://i.telegraph.co.uk/multimedia/archive/02850/buzzBB5PW3_2850210b.jpg">
+    </div>
+  </div>
+```
 */
 .slickheader {
   margin-left: calc(-50vw + 50%);
@@ -508,4 +517,8 @@ category: Components - Slickheader
   .slickheader__img {
     object-position: 50% 0%;
   }
+}
+
+.slickheader--x-large {
+  height: 50vw;
 }
