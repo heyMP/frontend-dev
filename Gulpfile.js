@@ -118,9 +118,8 @@ gulp.task('browserSyncServer', function () {
     paths.fonts + '/**/*',
     paths.html + '/**/*.html',
   ], {
-    server: {
-      baseDir: "./"
-    }
+    server: "./",
+    // proxy: "local.frontend.dev"
   });
 });
 
