@@ -7,11 +7,11 @@ Here is a demo of the installation and a rundown of features. https://www.youtub
 
 ### Install the necessary package managers
 
-``$ sudo npm install -g bower``
+``$ npm install -g bower``
 
-``$ sudo npm install -g gulp``
+``$ npm install -g gulp``
 
-``$ sudo npm install -g gulp-hologram``
+``$ npm install -g gulp-hologram``
 
 ``$ gem install bundler``
 
@@ -23,7 +23,7 @@ Here is a demo of the installation and a rundown of features. https://www.youtub
 
 ### Install the dependencies
 
-``$ sudo npm install``
+``$ npm install``
 
 ``$ bower install``
 

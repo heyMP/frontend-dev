@@ -15,8 +15,10 @@
     "object-fit": "~0.4.1"
   },
   "devDependencies": {
+    "compass-breakpoint": "breakpoint-sass#~2.6.1",
+    "Cortana": "~1.2.7",
     "north": "~0.2.0",
-    "Cortana": "~1.2.7"
+    "susy": "~2.2.6"
   },
   "overrides": {
     "jquery": {

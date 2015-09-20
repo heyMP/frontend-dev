@@ -1,10 +1,6 @@
-@import "compass";
-@import "breakpoint";
-@import "susy";
-@import "toolkit";
-@import "modular-scale";
-@import "color-schemer";
-@import "normalize";
+// Dependencies
+@import "../bower_components/susy/sass/susy";
+@import "../bower_components/compass-breakpoint/stylesheets/breakpoint";
 
 // Core
 @import "core/resets";

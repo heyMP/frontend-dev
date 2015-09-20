@@ -1,10 +1,9 @@
 'use strict';
 
 var gulp = require('gulp');
+var sass = require('gulp-sass');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
-var paths = require('compass-options').paths();
-var compass = require('gulp-compass');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var shell = require('gulp-shell');
@@ -25,21 +24,15 @@ var filterByExtension = function(extension){
 };
 
 gulp.task('sass', function() {
-  return gulp.src(paths.sass + '/**/**/*.scss')
+  return gulp.src('./sass/**/**/*.scss')
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
         this.emit('end');
     }}))
-    .pipe(compass({
-      config_file: './config.rb',
-      css: paths.css,
-      sass: paths.sass,
-      bundle_exec: true,
-      time: true
-    }))
+    .pipe(sass())
     .pipe(prefix())
-    .pipe(gulp.dest(paths.css));
+    .pipe(gulp.dest('./css'));
 });
 
 gulp.task('hologram', function() {
@@ -48,18 +41,18 @@ gulp.task('hologram', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(paths.sass + '/**/*.scss', ['sass', 'hologram']);
-  gulp.watch(paths.js + '/*.js', ['js']);
+  gulp.watch('sass/**/*.scss', ['sass', 'hologram']);
+  gulp.watch('js/*.js', ['js']);
 });
 
 gulp.task('js', function () {
-  var jsFiles = [paths.js + '/*.js'];
+  var jsFiles = ['js/*.js'];
 
   gulp.src(jsFiles)
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(shell([
-      'browserify '+ paths.js + '/scripts.js > ' + paths.js + '/dist/bundle.js'
+      'browserify js/scripts.js > js/dist/bundle.js'
     ], {
       ignoreErrors: true
     }));
@@ -112,11 +105,11 @@ gulp.task('svg', function () {
 //////////////////////////////
 gulp.task('browserSyncServer', function () {
   browserSync.init([
-    paths.css +  '/**/*.css',
-    paths.js + '/**/*.js',
-    paths.img + '/**/*',
-    paths.fonts + '/**/*',
-    paths.html + '/**/*.html',
+    'css/**/*.css',
+    'js/**/*.js',
+    'images/**/*',
+    'fonts/**/*',
+    './**/*.html',
   ], {
     server: "./",
     // proxy: "local.frontend.dev"
@@ -125,11 +118,11 @@ gulp.task('browserSyncServer', function () {
 
 gulp.task('browserSync', function () {
   browserSync.init([
-    paths.css +  '/**/*.css',
-    paths.js + '/**/*.js',
-    paths.img + '/**/*',
-    paths.fonts + '/**/*',
-    paths.html + '/**/*.html',
+    'css/**/*.css',
+    'js/**/*.js',
+    'images/**/*',
+    'fonts/**/*',
+    './**/*.html',
   ]);
 });
 
