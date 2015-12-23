@@ -30,7 +30,7 @@ Here is a demo of the installation and a rundown of features. https://www.youtub
 ``$ bundle install``
 
 #### Segmentation Fault
-If you receive any Drush errors that contain `Segmentation fault` run `npm install`, WITHOUT sudo. There are occations where the npm cleanup script doesn't run when using sudo.
+If you receive any Drush errors that contain `Segmentation fault` run `npm install`, WITHOUT sudo. There are occasions where the npm cleanup script doesn't run when using sudo.
 
 ### Run Gulp Server
 ``$ gulp server``
