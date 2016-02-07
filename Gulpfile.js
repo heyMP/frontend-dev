@@ -41,7 +41,7 @@ gulp.task('hologram', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('sass/**/*.scss', ['sass', 'hologram']);
+  gulp.watch('sass/**/*.scss', ['sass']);
   gulp.watch('js/*.js', ['js']);
 });
 
@@ -129,6 +129,6 @@ gulp.task('browserSync', function () {
 //////////////////////////////
 // Server Tasks
 //////////////////////////////
-gulp.task('build', ['hologram', 'js', 'svg', 'bowerdependancies']);
-gulp.task('server', ['watch', 'browserSyncServer', 'hologram', 'sass', 'bowerdependancies', 'svg']);
-gulp.task('default', ['watch', 'browserSync', 'hologram', 'sass', 'bowerdependancies', 'svg']);
+gulp.task('build', ['js', 'svg', 'bowerdependancies']);
+gulp.task('server', ['watch', 'browserSyncServer', 'sass', 'bowerdependancies', 'svg']);
+gulp.task('default', ['watch', 'browserSync', 'sass', 'bowerdependancies', 'svg']);
