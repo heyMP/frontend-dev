@@ -17,11 +17,12 @@
     "gulp-plumber": "^0.6.6",
     "gulp-sass": "^2.0.4",
     "gulp-shell": "^0.2.4",
-    "gulp-svg-sprite": "^1.0.19",
+    "gulp-svg-sprite": "1.0.19",
     "gulp-uglify": "^1.1.0",
     "jshint-stylish": "^0.1.5",
     "main-bower-files": "^2.9.0",
-    "vinyl": "^0.4.6"
+    "vinyl": "^0.4.6",
+    "lodash": "4.0.0"
   },
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"
