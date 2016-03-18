@@ -4,7 +4,14 @@
 (function ($) {
   'use strict';
 
-  $('.button-collapse').sideNav();
+  /**
+  * liveQuestions Module
+  *
+  * Description
+  */
+  angular.module('liveQuestions', [
+    'ui.materialize'
+  ]);
 
 })(jQuery);
 

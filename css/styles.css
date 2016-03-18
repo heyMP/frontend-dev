@@ -2008,6 +2008,7 @@ th {
 .clearfix:after {
   clear: both; }
 
+/*** Materialize ***/
 /**
  * Typography
  */
@@ -2108,7 +2109,7 @@ ul {
 blockquote {
   margin: 20px 0;
   padding-left: 1.5rem;
-  border-left: 5px solid #ee6e73; }
+  border-left: 5px solid #5B8ED0; }
 
 i {
   line-height: inherit; }
@@ -2144,7 +2145,7 @@ video.responsive-video {
   .pagination li.active a {
     color: #fff; }
   .pagination li.active {
-    background-color: #ee6e73; }
+    background-color: #5B8ED0; }
   .pagination li.disabled a {
     cursor: default;
     color: #999; }
@@ -5531,7 +5532,7 @@ nav ul a span.badge {
 
 nav {
   color: #fff;
-  background-color: #ee6e73;
+  background-color: #5B8ED0;
   width: 100%;
   height: 56px;
   line-height: 56px; }
@@ -7501,7 +7502,7 @@ select {
 
 .side-nav .collapsible-body li.active,
 .side-nav.fixed .collapsible-body li.active {
-  background-color: #ee6e73; }
+  background-color: #5B8ED0; }
   .side-nav .collapsible-body li.active a,
   .side-nav.fixed .collapsible-body li.active a {
     color: #fff; }
