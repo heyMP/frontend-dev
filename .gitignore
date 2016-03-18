@@ -5,5 +5,4 @@ node_modules/
 Gemfile.lock
 
 // For development purposes only
-dist/
 styleguide/
