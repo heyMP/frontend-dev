@@ -41,7 +41,7 @@ If you are using this stack on a server rendered website then run gulp without i
 
 ## Bower Dependencies
 
-Bower makes is extremely easy to add new third-party libraries to your project.  Front-end dev makes that process even easier by automatically pulling those javascript and css files from bower into your project via gulp.
+Bower makes it extremely easy to add new third-party libraries to your project.  Front-end dev makes that process even easier by automatically pulling those javascript and css files from bower into your project via gulp.
 
 ### Example: Adding Bootstrap through Bower
 
