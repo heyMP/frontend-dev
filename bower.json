@@ -9,6 +9,8 @@
     "tests"
   ],
   "dependencies": {
+    "angular": "~1.5.1",
+    "angular-materialize": "~0.1.3",
     "borealis": "~1.0.1",
     "eq.js": "~1.4.1",
     "object-fit": "~0.4.1",
