@@ -16,6 +16,7 @@ var concat = require('gulp-concat');
 var svgSprite = require('gulp-svg-sprite');
 var uglify = require('gulp-uglify');
 var cssmin = require('gulp-minify-css');
+var sassGlob = require('gulp-sass-glob');
 
 var filterByExtension = function(extension){
     return filter(function(file){
@@ -30,8 +31,9 @@ gulp.task('sass', function() {
         console.log(error.message);
         this.emit('end');
     }}))
+    .pipe(sassGlob())
     .pipe(sass())
-    .pipe(prefix())
+    .pipe(prefix({browsers: ['last 4 versions']}))
     .pipe(gulp.dest('./css'));
 });
 
@@ -51,6 +53,7 @@ gulp.task('js', function () {
   gulp.src(jsFiles)
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(uglify())
     .pipe(shell([
       'browserify js/scripts.js > js/dist/bundle.js'
     ], {
