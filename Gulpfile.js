@@ -15,6 +15,7 @@ var filter = require('gulp-filter');
 var concat = require('gulp-concat');
 var svgSprite = require('gulp-svg-sprite');
 var uglify = require('gulp-uglify');
+var uglifyjs = require('gulp-uglifyjs');
 var cssmin = require('gulp-minify-css');
 var sassGlob = require('gulp-sass-glob');
 
@@ -44,21 +45,23 @@ gulp.task('hologram', function() {
 
 gulp.task('watch', function() {
   gulp.watch('sass/**/*.scss', ['sass']);
-  gulp.watch('js/*.js', ['js']);
+  gulp.watch(['js/**/**.js', '!js/dist/**'], ['js']);
 });
 
 gulp.task('js', function () {
-  var jsFiles = ['js/*.js'];
+  var jsFiles = ['js/**/*.js', '!js/dist/**'];
 
   gulp.src(jsFiles)
+    .pipe(plumber({
+      errorHandler: function (error) {
+        console.log(error.message);
+        this.emit('end');
+    }}))
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(concat('scripts.js'))
     .pipe(uglify())
-    .pipe(shell([
-      'browserify js/scripts.js > js/dist/bundle.js'
-    ], {
-      ignoreErrors: true
-    }));
+    .pipe(gulp.dest('./js/dist'));
 });
 
 // Consolidate all of our bower dependancies into single js and css files.
@@ -108,8 +111,8 @@ gulp.task('svg', function () {
 //////////////////////////////
 gulp.task('browserSyncServer', function () {
   browserSync.init([
-    'css/**/*.css',
-    'js/**/*.js',
+    'css/dist/*.css',
+    'js/dist/*.js',
     'images/**/*',
     'fonts/**/*',
     './**/*.html',
@@ -121,8 +124,8 @@ gulp.task('browserSyncServer', function () {
 
 gulp.task('browserSync', function () {
   browserSync.init([
-    'css/**/*.css',
-    'js/**/*.js',
+    'css/dist/*.css',
+    'js/dist/*.js',
     'images/**/*',
     'fonts/**/*',
     './**/*.html',

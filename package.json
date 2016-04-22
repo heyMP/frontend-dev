@@ -20,6 +20,7 @@
     "gulp-shell": "^0.2.4",
     "gulp-svg-sprite": "1.0.19",
     "gulp-uglify": "^1.1.0",
+    "gulp-uglifyjs": "^0.6.2",
     "jshint-stylish": "^0.1.5",
     "lodash": "4.0.0",
     "main-bower-files": "^2.9.0",
