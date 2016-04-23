@@ -4,7 +4,7 @@
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.3.1",
-    "browserify": "^6.3.2",
+    "browserify": "^6.3.4",
     "compass-options": "^0.1.1",
     "gulp": "^3.6.0",
     "gulp-autoprefixer": "^1.0.1",
@@ -24,7 +24,8 @@
     "jshint-stylish": "^0.1.5",
     "lodash": "4.0.0",
     "main-bower-files": "^2.9.0",
-    "vinyl": "^0.4.6"
+    "vinyl": "^0.4.6",
+    "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"

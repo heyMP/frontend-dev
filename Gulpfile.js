@@ -18,15 +18,17 @@ var uglify = require('gulp-uglify');
 var uglifyjs = require('gulp-uglifyjs');
 var cssmin = require('gulp-minify-css');
 var sassGlob = require('gulp-sass-glob');
+var source = require('vinyl-source-stream');
+var browserify = require('browserify');
 
 var filterByExtension = function(extension){
-    return filter(function(file){
-        return file.path.match(new RegExp('.' + extension + '$'));
-    });
+  return filter(function(file){
+    return file.path.match(new RegExp('.' + extension + '$'));
+  });
 };
 
 gulp.task('sass', function() {
-  return gulp.src('./sass/**/**/*.scss')
+  return gulp.src('./src/sass/**/**/*.scss')
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
@@ -35,7 +37,7 @@ gulp.task('sass', function() {
     .pipe(sassGlob())
     .pipe(sass())
     .pipe(prefix({browsers: ['last 4 versions']}))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('hologram', function() {
@@ -44,13 +46,16 @@ gulp.task('hologram', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('sass/**/*.scss', ['sass']);
-  gulp.watch(['js/**/**.js', '!js/dist/**'], ['js']);
+  gulp.watch('src/sass/**/*.scss', ['sass']);
+  gulp.watch(['src/js/**/**.js'], ['js']);
 });
 
 gulp.task('js', function () {
-  var jsFiles = ['js/**/*.js', '!js/dist/**'];
+  // We are going to concatinate all of the partials
+  // into the scripts.js file.
+  var jsFiles = ['./src/js/**/**/**/**/*.js'];
 
+  // Concat modules together
   gulp.src(jsFiles)
     .pipe(plumber({
       errorHandler: function (error) {
@@ -59,9 +64,9 @@ gulp.task('js', function () {
     }}))
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(concat('scripts.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./js/dist'));
+    .pipe(browserify('./src/js/scripts.js').bundle())
+    .pipe(source('scripts.js'))
+    .pipe(gulp.dest('./dist/js'));
 });
 
 // Consolidate all of our bower dependancies into single js and css files.
@@ -79,12 +84,12 @@ gulp.task('bowerdependancies', function(){
     .pipe(jsFilter)
     .pipe(uglify())
     .pipe(concat('third-party.js'))
-    .pipe(gulp.dest('./js/dist/'))
+    .pipe(gulp.dest('./dist/js/'))
     .pipe(jsFilter.restore())
     .pipe(filterByExtension('css'))
     .pipe(cssmin())
     .pipe(concat('third-party.css'))
-    .pipe(gulp.dest('./css/dist/'));
+    .pipe(gulp.dest('./dist/css/'));
 });
 
 gulp.task('svg', function () {
@@ -101,9 +106,9 @@ gulp.task('svg', function () {
     }
   };
 
-  return gulp.src('svg/*.svg')
+  return gulp.src('src/svg/*.svg')
     .pipe(svgSprite(config))
-    .pipe(gulp.dest("svg/dist"));
+    .pipe(gulp.dest("dist/svg"));
 });
 
 //////////////////////////////
@@ -111,9 +116,7 @@ gulp.task('svg', function () {
 //////////////////////////////
 gulp.task('browserSyncServer', function () {
   browserSync.init([
-    'css/dist/*.css',
-    'js/dist/*.js',
-    'images/**/*',
+    'dist/**/**',
     'fonts/**/*',
     './**/*.html',
   ], {
@@ -124,9 +127,7 @@ gulp.task('browserSyncServer', function () {
 
 gulp.task('browserSync', function () {
   browserSync.init([
-    'css/dist/*.css',
-    'js/dist/*.js',
-    'images/**/*',
+    'dist/**/**',
     'fonts/**/*',
     './**/*.html',
   ]);

@@ -9,9 +9,6 @@
     "tests"
   ],
   "dependencies": {
-    "borealis": "~1.0.1",
-    "eq.js": "~1.4.1",
-    "object-fit": "~0.4.1",
     "svg4everybody": "~1.0.0",
     "vide": "~0.5.0"
   },
