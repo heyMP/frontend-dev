@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var browserSync = require('browser-sync');
@@ -35,8 +36,10 @@ gulp.task('sass', function() {
         this.emit('end');
     }}))
     .pipe(sassGlob())
-    .pipe(sass())
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
     .pipe(prefix({browsers: ['last 4 versions']}))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/css'));
 });
 
