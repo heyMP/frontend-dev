@@ -21,6 +21,7 @@ var cssmin = require('gulp-minify-css');
 var sassGlob = require('gulp-sass-glob');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
+var imagemin = require('gulp-imagemin');
 
 var filterByExtension = function(extension){
   return filter(function(file){
@@ -51,6 +52,7 @@ gulp.task('hologram', function() {
 gulp.task('watch', function() {
   gulp.watch('src/sass/**/*.scss', ['sass']);
   gulp.watch(['src/js/**/**.js'], ['js']);
+  gulp.watch(['src/images/*'], ['images']);
 });
 
 gulp.task('js', function () {
@@ -110,8 +112,15 @@ gulp.task('svg', function () {
   };
 
   return gulp.src('src/svg/*.svg')
+    .pipe(gulp.dest("dist/svg"))
     .pipe(svgSprite(config))
     .pipe(gulp.dest("dist/svg"));
+});
+
+gulp.task('images', function () {
+  return gulp.src("src/images/**.*")
+    .pipe(imagemin([], {"verbose": false}))
+    .pipe(gulp.dest("dist/images"));
 });
 
 //////////////////////////////
@@ -139,6 +148,6 @@ gulp.task('browserSync', function () {
 //////////////////////////////
 // Server Tasks
 //////////////////////////////
-gulp.task('build', ['js', 'svg', 'bowerdependancies']);
-gulp.task('server', ['watch', 'browserSyncServer', 'sass', 'bowerdependancies', 'svg']);
-gulp.task('default', ['watch', 'browserSync', 'sass', 'bowerdependancies', 'svg']);
+gulp.task('build', ['js', 'svg', 'images', 'bowerdependancies']);
+gulp.task('server', ['watch', 'browserSyncServer', 'js', 'sass', 'bowerdependancies', 'svg', 'images']);
+gulp.task('default', ['watch', 'browserSync', 'js', 'sass', 'bowerdependancies', 'svg', 'images']);

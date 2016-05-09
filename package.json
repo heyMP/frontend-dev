@@ -12,6 +12,7 @@
     "gulp-concat": "^2.5.2",
     "gulp-filter": "^2.0.2",
     "gulp-hologram": "^1.2.0",
+    "gulp-imagemin": "^3.0.0",
     "gulp-jshint": "^1.5.1",
     "gulp-minify-css": "^0.5.1",
     "gulp-plumber": "^0.6.6",
