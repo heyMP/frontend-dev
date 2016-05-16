@@ -1,0 +1,14 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+html {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  @include breakpoint(500px) {
+    font-size: $base-font-size * 1.1;
+  }
+  @include breakpoint(800px) {
+    font-size: $base-font-size * 1.2;
+  }
+}
